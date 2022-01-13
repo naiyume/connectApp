@@ -1,3 +1,11 @@
+/** 
+ * @file JS SDK for NCI DCEG's Connect API. 〜(￣▽￣〜)
+ * 
+ * @version 1.0
+ * @author Abe
+ * @copyright 2021
+ */
+
 import { addEventHideNotification } from "./event.js";
 import fieldMapping from './components/fieldToConceptIdMapping.js'; 
 

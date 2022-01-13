@@ -12,7 +12,7 @@ jobs:
       - name: Run jsdoc.
         run: |
           jsdoc -v
-          jsdoc --readme README.md ./js/shared.js -c conf.json
+          jsdoc ./js/shared.js -c conf.json
       - name: A quick check on what's new.
         run: |
           git branch -vv
