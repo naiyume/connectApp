@@ -12,6 +12,8 @@ if(location.host === urls.prod) api = 'https://api-myconnect.cancer.gov/app';
 else if(location.host === urls.stage) api = 'https://api-myconnect-stage.cancer.gov/app';
 else api = 'https://us-central1-nih-nci-dceg-connect-dev.cloudfunctions.net/app';
 
+
+
 export const validateToken = async (token) => {
     const idToken = await getIdToken();
     const response = await fetch(api+`?api=validateToken${token? `&token=${token}` : ``}`, {
@@ -125,6 +127,13 @@ export const storeResponseQuest = async (formData) => {
     const response = await fetch(url, requestObj);
     return response.json();
 }
+
+/**
+ * Saves a JSON as a .json file.
+ * @param {object} formData The data to push to firestore.
+ * @param {string} fileName The name of the file without extensions.
+ * @returns {HTMLAnchorElement} HTMLAnchorElement.
+ */
 export const storeResponse = async (formData) => {
 
     formData = conceptIdMapping(formData);
