@@ -175,6 +175,10 @@ export const storeResponse = async (formData) => {
     return response.json();
 }
 
+/**
+ * Grabs participant information from participants table
+ * @returns {object} returns participant data.
+ */
 export const getMyData = async () => {
     const idToken = await new Promise((resolve, reject) => {
         const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
